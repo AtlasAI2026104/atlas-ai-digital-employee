@@ -1,6 +1,7 @@
 def generate_job_number():
-    with open("job_number.txt", "r") as file:
-        current_number = int(file.read())
+    with open("job_number.txt", "a+") as file:
+        file.seek(0)
+        current_number = int(file.read() or 0)
 
     new_number = current_number + 1
 
